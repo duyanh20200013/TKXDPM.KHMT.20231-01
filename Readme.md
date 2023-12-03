@@ -23,7 +23,7 @@ This is a Capstone's source code for Software Design and Construction project
   - Check Coupling in SubSystem,utils,views
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): https://github.com/duyanh20200013/TKXDPM.KHMT.20231-01/pull/1
 </details>
 
 <details>
