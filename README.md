@@ -10,7 +10,7 @@ Before using this Github repository, everyone needs to register their group info
 | Nguyễn Ngọc Quỳnh Anh| Member      |
 
 
-  <summary>W2: 01/10/2023~08/10/2023 </summary>
+  <summary>W13: 27/11/2023~03/12/2023 </summary>
 <br>
 <details>
 <details>
