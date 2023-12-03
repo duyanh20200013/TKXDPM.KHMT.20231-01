@@ -19,18 +19,11 @@ This is a Capstone's source code for Software Design and Construction project
 <details>
 <summary>Đinh Duy Anh</summary>
 <br>
-
 - Assigned tasks:
-  - Task 1
-  - Task 2
-  - ...
+  - Check Coupling in SubSystem,utils,views
 
 - Implementation details:
   - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
-
 </details>
 
 <details>

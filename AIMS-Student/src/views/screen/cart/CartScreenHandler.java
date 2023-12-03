@@ -150,6 +150,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		labelAmount.setText(Utils.getCurrencyFormat(amount));
 	}
 	
+	// Data Coupling - Sử dụng CartMedia
 	private void displayCartWithMediaAvailability(){
 		// clear all old cartMedia
 		vboxCart.getChildren().clear();
