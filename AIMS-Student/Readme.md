@@ -1,18 +1,18 @@
-## Quick start
+# TKXDPM.VN.20231-01
 
-Before using this Github repository, everyone needs to register their group information using the table below:
+This is a Capstone's source code for Software Design and Construction project
 
-| Name                 | Role        |
-| :--------------------| :---------- |
-| Đinh Duy Anh         | Team Leader |
-| Nguyễn Minh An       | Member      |
-| Nguyễn Khánh An      | Member      |
-| Nguyễn Ngọc Quỳnh Anh| Member      |
+## Team member
 
+| Name              | Role        |
+| :---------------  | :---------- |
+| Đinh Duy Anh      | Team Leader |
+| Nguyễn Khánh An   | Member      |
+| Nguyễn Minh An    | Member      |
+| Nguyễn Quỳnh Anh  | Member      |
 
-  <summary>W13: 27/11/2023~03/12/2023 </summary>
-<br>
-<details>
+## Report Content
+
 <details>
   <summary>W13: 27/11/2023~03/12/2023</summary>
 <br>
@@ -46,8 +46,4 @@ Before using this Github repository, everyone needs to register their group info
     - You can attach images if you want
 
 </details>
-
-</details>
-
-
-
+---
