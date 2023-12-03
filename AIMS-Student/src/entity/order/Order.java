@@ -21,10 +21,15 @@ public class Order {
     }
 
 
+
+
     // data coupling - lấy đối tượng Order Media
     public void addOrderMedia(OrderMedia om){
         this.lstOrderMedia.add(om);
     }
+
+
+
 
     // data coupling - lấy đối tượng Order Media
     public void removeOrderMedia(OrderMedia om){
@@ -54,6 +59,9 @@ public class Order {
     public void setDeliveryInfo(HashMap deliveryInfo) {
         this.deliveryInfo = deliveryInfo;
     }
+
+
+
 
     // stamp coupling - dùng 1 vài thuộc tính của OrderMedia
     public int getAmount(){
