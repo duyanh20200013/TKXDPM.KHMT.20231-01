@@ -20,10 +20,13 @@ public class Order {
         this.lstOrderMedia = lstOrderMedia;
     }
 
+
+    // data coupling - lấy đối tượng Order Media
     public void addOrderMedia(OrderMedia om){
         this.lstOrderMedia.add(om);
     }
 
+    // data coupling - lấy đối tượng Order Media
     public void removeOrderMedia(OrderMedia om){
         this.lstOrderMedia.remove(om);
     }
@@ -52,6 +55,7 @@ public class Order {
         this.deliveryInfo = deliveryInfo;
     }
 
+    // stamp coupling - dùng 1 vài thuộc tính của OrderMedia
     public int getAmount(){
         double amount = 0;
         for (Object object : lstOrderMedia) {

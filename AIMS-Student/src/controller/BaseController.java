@@ -17,6 +17,8 @@ public class BaseController {
      * @param media
      * @return CartMedia or null
      */
+
+    // Stamp coupling - lấy 1 vài thuộc tính trong Media
     public CartMedia checkMediaInCart(Media media){
         return Cart.getCart().checkMediaInCart(media);
     }

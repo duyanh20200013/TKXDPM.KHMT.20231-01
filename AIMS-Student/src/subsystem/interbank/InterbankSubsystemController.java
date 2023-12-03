@@ -32,7 +32,7 @@ public class InterbankSubsystemController {
 	private String generateData(Map<String, Object> data) {
 		return ((MyMap) data).toJSON();
 	}
-
+	// data coupling - lấy đối tượng Credit Card
 	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
 		Map<String, Object> transaction = new MyMap();
 

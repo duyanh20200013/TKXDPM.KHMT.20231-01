@@ -39,6 +39,8 @@ public class PlaceOrderController extends BaseController{
      * @return Order
      * @throws SQLException
      */
+
+    // Stamp coupling - lấy đối tượng Order, Cart
     public Order createOrder() throws SQLException{
         Order order = new Order();
         for (Object object : Cart.getCart().getListMedia()) {
@@ -56,6 +58,8 @@ public class PlaceOrderController extends BaseController{
      * @param order
      * @return Invoice
      */
+
+    // Stamp coupling - lấy 1 vài thuộc tính thuộc Order
     public Invoice createInvoice(Order order) {
         return new Invoice(order);
     }
