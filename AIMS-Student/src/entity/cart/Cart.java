@@ -21,10 +21,15 @@ public class Cart {
         lstCartMedia = new ArrayList<>();
     }
 
+
+
+
     // Data coupling - gọi đối tượng CartMedia và dùng luôn
     public void addCartMedia(CartMedia cm){
         lstCartMedia.add(cm);
     }
+
+
 
 
     // Data coupling - gọi đối tượng CartMedia và dùng luôn
@@ -40,6 +45,8 @@ public class Cart {
         lstCartMedia.clear();
     }
 
+
+
     // Stamp coupling - dùng quantity của CartMedia
     public int getTotalMedia(){
         int total = 0;
@@ -49,6 +56,10 @@ public class Cart {
         }
         return total;
     }
+
+
+
+
 
     // Stamp coupling - dùng quantity của CartMedia
     public int calSubtotal(){

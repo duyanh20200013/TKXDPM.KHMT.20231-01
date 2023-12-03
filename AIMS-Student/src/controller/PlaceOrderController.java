@@ -59,6 +59,8 @@ public class PlaceOrderController extends BaseController{
      * @return Invoice
      */
 
+
+
     // Stamp coupling - lấy 1 vài thuộc tính thuộc Order
     public Invoice createInvoice(Order order) {
         return new Invoice(order);
