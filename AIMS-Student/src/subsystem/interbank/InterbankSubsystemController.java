@@ -24,7 +24,8 @@ public class InterbankSubsystemController {
 	private static final String VERSION = "1.0.0";
 
 	private static InterbankBoundary interbankBoundary = new InterbankBoundary();
-
+    
+	// DataCoupling - Sử dụng CreditCard
 	public PaymentTransaction refund(CreditCard card, int amount, String contents) {
 		return null;
 	}
@@ -32,7 +33,7 @@ public class InterbankSubsystemController {
 	private String generateData(Map<String, Object> data) {
 		return ((MyMap) data).toJSON();
 	}
-	// data coupling - lấy đối tượng Credit Card
+    // DuyAnh - StampCoupling - sử dụng CreditCard
 	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
 		Map<String, Object> transaction = new MyMap();
 
