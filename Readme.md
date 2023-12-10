@@ -39,4 +39,14 @@ This is a Capstone's source code for Software Design and Construction project
     - You can attach images if you want
 
 </details>
+<summary>Nguyễn Khanh An</summary>
+<br>
+- Assigned tasks: create new base, choose ui framework
+- Implemetation details:
+    - Choose swing
+    - Craete a code base
+- Pull Request:
+
+<details>
+
 ---
