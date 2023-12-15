@@ -10,6 +10,8 @@ import entity.media.Media;
  * This class controls the flow of events in homescreen
  * @author nguyenlm
  */
+
+// Tiếp tục vi phạm SRP, nên tách thành 1 lớp xử lí màn hình, 1 lớp check riêng
 public class HomeController extends BaseController{
 
 

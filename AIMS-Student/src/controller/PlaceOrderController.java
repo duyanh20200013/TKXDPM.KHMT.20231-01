@@ -19,6 +19,12 @@ import views.screen.popup.PopupScreen;
  * This class controls the flow of place order usecase in our AIMS project
  * @author nguyenlm
  */
+
+/* Lớp này vi phạm 3 nguyên tắc:
+* 1. SRP: Có quá nhiều trách nhiệm như: tạo đơn, tạo invoice, .... -> nên tách ra làm các lớp xử lí riêng biệt
+* 2. OCP: Khi cần thay đổi hoặc mở rộng các phương thức xử lí thông tin giao hàng hoặc tính phí vận chuyển thì phải trực tiếp sửa vào class này
+* 3. DIP: Lớp này phụ thuộc vào các lớp Cart, Order, Invoice -> khó tái sử dụng, kiểm thử
+* */
 public class PlaceOrderController extends BaseController{
 
     /**

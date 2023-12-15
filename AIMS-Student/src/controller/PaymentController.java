@@ -44,6 +44,8 @@ public class PaymentController extends BaseController {
 	 * @throws InvalidCardException - if the string does not represent a valid date
 	 *                              in the expected format
 	 */
+
+	// Vi phạm srp, nên tách làm 1 lớp trả về ngày riêng
 	private String getExpirationDate(String date) throws InvalidCardException {
 		String[] strs = date.split("/");
 		if (strs.length != 2) {
@@ -100,6 +102,7 @@ public class PaymentController extends BaseController {
 		return result;
 	}
 
+	// Tiếp tục vi phạm SRP
 	public void emptyCart(){
         Cart.getCart().emptyCart();
     }

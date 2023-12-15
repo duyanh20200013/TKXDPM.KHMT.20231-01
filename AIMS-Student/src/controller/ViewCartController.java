@@ -11,6 +11,8 @@ import entity.cart.CartMedia;
  * This class controls the flow of events when users view the Cart
  * @author nguyenlm
  */
+
+// Có thể cải thiện tránh SRP trong tương lai khi thêm các xử lí như thêm, sửa xóa sản phẩm sẽ bị vi phạm
 public class ViewCartController extends BaseController{
     
     /**
