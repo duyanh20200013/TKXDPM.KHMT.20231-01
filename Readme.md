@@ -48,13 +48,12 @@ This is a Capstone's source code for Software Design and Construction project
 <summary>Nguyễn Minh An</summary>
 <br>
 
-- Assigned tasks: add coupling for entity, controller and subsystem
+- Assigned tasks: SOLID in Controller 
 
 - Implementation details:
   - Pull Request(s): https://github.com/duyanh20200013/TKXDPM.KHMT.20231-01/pull/4
   - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+    - Identify violations of SOLID principles in controller classes 
 </details>
 </div>
 
