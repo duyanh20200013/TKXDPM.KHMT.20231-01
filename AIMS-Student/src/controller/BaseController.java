@@ -10,6 +10,8 @@ import entity.media.Media;
  * This class is the base controller for our AIMS project
  * @author nguyenlm
  */
+
+// Lớp này có 2 trách nhiệm, vi phạm SRP, nên tách ra làm 2 lớp con để rõ ràng hơn
 public class BaseController {
     
     /**
