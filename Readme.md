@@ -12,25 +12,18 @@ This is a Capstone's source code for Software Design and Construction project
 | Nguyễn Quỳnh Anh  | Member      |
 
 ## Report Content
-
+<div>
 <details>
   <summary>W13: 27/11/2023~03/12/2023</summary>
 <br>
 <details>
 <summary>Đinh Duy Anh</summary>
 <br>
-
 - Assigned tasks:
-  - Task 1
-  - Task 2
-  - ...
+  - Check Coupling in SubSystem,utils,views
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
-
+  - Pull Request(s): https://github.com/duyanh20200013/TKXDPM.KHMT.20231-01/pull/1
 </details>
 
 <details>
@@ -40,10 +33,29 @@ This is a Capstone's source code for Software Design and Construction project
 - Assigned tasks: add coupling for entity, controller and subsystem
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): https://github.com/duyanh20200013/TKXDPM.KHMT.20231-01/pull/2
   - Specific implementation details:
     - Describe specific in detail what you did last week
     - You can attach images if you want
-
 </details>
+</div>
+
+<div>
+<details>
+  <summary>W15: 11/12/2023~17/12/2023</summary>
+<br>
+<details>
+<summary>Nguyễn Minh An</summary>
+<br>
+
+- Assigned tasks: add coupling for entity, controller and subsystem
+
+- Implementation details:
+  - Pull Request(s): https://github.com/duyanh20200013/TKXDPM.KHMT.20231-01/pull/4
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
+</details>
+</div>
+
 ---
