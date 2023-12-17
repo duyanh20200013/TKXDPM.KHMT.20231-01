@@ -31,7 +31,8 @@ public class InterbankSubsystemController {
 	}
 	
 	private String generateData(Map<String, Object> data) {
-		return ((MyMap) data).toJSON();
+		//Liskov Substitution Principle + OPEN-Close violated: will throw class cast exception for inheritor
+		return ((MyMap) data).toJSON();		//Dependency Inversion Principle
 	}
     // DuyAnh - StampCoupling - sử dụng CreditCard
 	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
@@ -53,6 +54,7 @@ public class InterbankSubsystemController {
 		requestMap.put("transaction", transaction);
 
 		String responseText = interbankBoundary.query(Configs.PROCESS_TRANSACTION_URL, generateData(requestMap));
+		//Dependencyyy Inversion Principle violated, use Map insten
 		MyMap response = null;
 		try {
 			response = MyMap.toMyMap(responseText, 0);
@@ -64,6 +66,7 @@ public class InterbankSubsystemController {
 		return makePaymentTransaction(response);
 	}
 
+	//Dependencyyy Inversion Principle violated, use Map insten
 	private PaymentTransaction makePaymentTransaction(MyMap response) {
 		if (response == null)
 			return null;
