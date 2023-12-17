@@ -21,6 +21,8 @@ import views.screen.FXMLScreenHandler;
 import views.screen.home.HomeScreenHandler;
 import views.screen.popup.PopupScreen;
 
+// SRP:Có quá nhiều trách nhiệm 
+
 public class MediaHandler extends FXMLScreenHandler{
 
     @FXML

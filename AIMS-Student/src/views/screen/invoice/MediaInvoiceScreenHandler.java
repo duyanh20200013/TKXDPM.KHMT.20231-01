@@ -14,6 +14,9 @@ import javafx.scene.layout.VBox;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
 
+
+//SRP: Có nhiều trách nhiệm
+
 public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
 
     @FXML

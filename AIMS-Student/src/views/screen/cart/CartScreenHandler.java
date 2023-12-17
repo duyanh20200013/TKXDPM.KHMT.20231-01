@@ -26,6 +26,9 @@ import views.screen.BaseScreenHandler;
 import views.screen.popup.PopupScreen;
 import views.screen.shipping.ShippingScreenHandler;
 
+// OCP: Khi cân thay đổi cách tình VAT thì cần trực tiếp thay đổi ở đây
+//DIP : Lớp này phụ thuộc vào CartMedia, Order -----> Khó kiểm thử
+
 public class CartScreenHandler extends BaseScreenHandler {
 
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());

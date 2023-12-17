@@ -55,6 +55,18 @@ This is a Capstone's source code for Software Design and Construction project
   - Specific implementation details:
     - Identify violations of SOLID principles in controller classes 
 </details>
+
+<details>
+<summary>Đinh Duy Anh</summary>
+<br>
+
+- Assigned tasks: SOLID in View
+
+- Implementation details:
+  - Pull Request(s): https://github.com/duyanh20200013/TKXDPM.KHMT.20231-01/pull/5
+  - Specific implementation details:
+    - Identify violations of SOLID principles in View
+</details>
 </div>
 
 ---
