@@ -20,11 +20,12 @@ import java.util.logging.Logger;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
 
+//Có nhiều trách nhiệm nhưng vì lớp trên chỉ chứa các hàm static nên có thể hiểu mõi hàm chỉ chửa một trách nhiệm
 public class API {
-
 	public static DateFormat DATE_FORMATER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	private static Logger LOGGER = Utils.getLogger(Utils.class.getName());
 
+	//DEADCODE
 	public static String get(String url, String token) throws Exception {
 		LOGGER.info("Request URL: " + url + "\n");
 		URL line_api_url = new URL(url);
@@ -45,8 +46,10 @@ public class API {
 		return respone.substring(0, respone.length() - 1).toString();
 	}
 
+	//DEAD VAR
 	int var;
 
+	//Open-Closed Principle violated: Cant extend
 	public static String post(String url, String data
 //			, String token
 	) throws IOException {
@@ -54,6 +57,7 @@ public class API {
 		URL line_api_url = new URL(url);
 		String payload = data;
 		LOGGER.info("Request Info:\nRequest URL: " + url + "\n" + "Payload Data: " + payload + "\n");
+		//Dependency Inversion Principle voalated: Phụ thuộc vào class cụ thể
 		HttpURLConnection conn = (HttpURLConnection) line_api_url.openConnection();
 		conn.setDoInput(true);
 		conn.setDoOutput(true);

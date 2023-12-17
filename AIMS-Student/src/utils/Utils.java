@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 /**
  * @author nguyenlm Contains helper functions
  */
+//Có nhiều trách nhiệm nhưng vì lớp trên chỉ chứa các hàm static nên có thể hiểu mõi hàm chỉ chửa một trách nhiệm
 public class Utils {
 
 	public static DateFormat DATE_FORMATER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -51,6 +52,7 @@ public class Utils {
 	 * @param message - plain text as {@link java.lang.String String}.
 	 * @return cipher text as {@link java.lang.String String}.
 	 */
+	//DEADCODE
 	public static String md5(String message) {
 		String digest = null;
 		try {

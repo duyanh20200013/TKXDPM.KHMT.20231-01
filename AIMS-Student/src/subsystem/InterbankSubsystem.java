@@ -35,6 +35,8 @@ public class InterbankSubsystem implements InterbankInterface {
 	 *      java.lang.String)
 	 */
 	// Data Coupling - Sử dụng CreditCard
+	//Dependency Inversion Principle : PaymentTransaction, CreditCart should be interface
+	//fix: chuyển package
 	public PaymentTransaction payOrder(CreditCard card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.payOrder(card, amount, contents);
 		return transaction;
@@ -45,6 +47,8 @@ public class InterbankSubsystem implements InterbankInterface {
 	 *      java.lang.String)
 	 */
 	//Data Coupling - Sử dụng Credit Card
+	//Dependency Inversion Principle : PaymentTransaction, CreditCart should be interface
+	//fix: chuyển package
 	public PaymentTransaction refund(CreditCard card, int amount, String contents) {
 		PaymentTransaction transaction = ctrl.refund(card, amount, contents);
 		return transaction;

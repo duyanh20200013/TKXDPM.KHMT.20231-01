@@ -26,6 +26,7 @@ public interface InterbankInterface {
 	 * @throws UnrecognizedException if responded with an unknown error code or
 	 *                               something goes wrong
 	 */
+	//Dependency Inversion Principle : PaymentTransaction should be interface
 	public abstract PaymentTransaction payOrder(CreditCard card, int amount, String contents)
 			throws PaymentException, UnrecognizedException;
 
@@ -41,6 +42,7 @@ public interface InterbankInterface {
 	 * @throws UnrecognizedException if responded with an unknown error code or
 	 *                               something goes wrong
 	 */
+	//Dependency Inversion Principle : PaymentTransaction should be interface
 	public abstract PaymentTransaction refund(CreditCard card, int amount, String contents)
 			throws PaymentException, UnrecognizedException;
 
