@@ -8,10 +8,12 @@ public class ContentNavigator {
     private Map<Class<? extends BaseContent>, BaseContent> mp = new HashMap<>();
     private final Screen screen;
 
-    public ContentNavigator(Screen screen) {
+    ContentNavigator(Screen screen) {
+        if(screen == null) throw new IllegalArgumentException("not null");
         this.screen = screen;
     }
     public <T extends BaseContent>void register(T contentContent) {
+        if(contentContent == null) throw new IllegalArgumentException("not null");
         mp.put(contentContent.getClass(), contentContent);
     }
 
@@ -20,6 +22,10 @@ public class ContentNavigator {
     }
 
     public void changeTo(Class<? extends BaseContent> panelClass) {
-        screen.setContent(get(panelClass));
+        if(panelClass == null) throw new IllegalArgumentException("not null");
+        var c = get(panelClass);
+        if(c == null)
+            throw new IllegalStateException("Khong co man hinh '%s'".formatted(panelClass.getSimpleName()));
+        screen.setContent(c);
     }
 }

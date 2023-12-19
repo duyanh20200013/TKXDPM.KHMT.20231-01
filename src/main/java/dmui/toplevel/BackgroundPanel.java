@@ -7,7 +7,7 @@ public class BackgroundPanel extends JPanel {
     private Image img;
     private Image scaled;
 
-    public BackgroundPanel(Image image) {
+    BackgroundPanel(Image image) {
         img = image;
     }
 

@@ -2,45 +2,46 @@ package controller.impl;
 
 import controller.ICartController;
 import controller.ICartItemController;
+import controller.IEtcController;
 import controller.IPaginatorController;
-import domain.CartDomain;
-import service.ICart;
+import domain.ICartDomain;
 
 import java.util.Date;
 import java.util.List;
 
 public class CartController extends BaseController implements ICartController {
-    private final CartDomain cart;
+    final ICartDomain cart;
+    final BoundedPaginator paginator;
 
-    public CartController(CartDomain cart) {
+    public CartController(ICartDomain cart, IEtcController etc) {
+        super();
         this.cart = cart;
+        paginator = new BoundedPaginator(this::getItemTypeCount, etc.getDefaultPageSize());
     }
 
     @Override
-    public long getTotalMoney() {
-        return 0;
+    public String getTotalMoney() {
+        return formatMoney(cart.getRawPrice());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return cart.countItem();
     }
 
     @Override
     public int getItemTypeCount() {
-        return 0;
+        return cart.countItemType();
     }
 
     @Override
-    public Date getSavedDate() {
-        //TODO:
-        return new Date();
+    public String getSavedDate() {
+        return formatDate(cart.getSavedDate());
     }
 
     @Override
     public IPaginatorController getPaginatorController() {
-        //TODO:
-        return null;
+        return paginator;
     }
 
     @Override

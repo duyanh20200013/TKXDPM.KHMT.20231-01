@@ -3,6 +3,7 @@ package dmui.content;
 import controller.ICartController;
 import controller.ICartItemController;
 import controller.IPaginatorController;
+import controller.IEtcController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,14 +13,16 @@ import static utils.Utils.countUnitStr;
 
 public class ViewCartUI extends BaseContent {
     private final ICartController cart;
+    private final IEtcController config;
     private final List<BasePanel> itemLists;
     private final JLabel totalLabel;
     private final JPanel panelList;
     private final List<ViewCartItemUI> viewCartItemUIList = new ArrayList<>();
 
-    public ViewCartUI(ICartController cart) {
+    public ViewCartUI(ICartController cart, IEtcController config) {
         super("Cart manager");
         this.cart = cart;
+        this.config = config;
         itemLists = new ArrayList<>();
         var pane = new BasePanel(new BorderLayout());
 
@@ -45,9 +48,11 @@ public class ViewCartUI extends BaseContent {
         add(pane, BorderLayout.CENTER);
         add(leftPanel, BorderLayout.LINE_END);
 
+        JPanel top = new JPanel(new BorderLayout());
         panelList = new JPanel();
         panelList.setLayout(new BoxLayout(panelList, BoxLayout.Y_AXIS));
-        var j = new JScrollPane(panelList);
+        top.add(panelList, BorderLayout.PAGE_START);
+        var j = new JScrollPane(top);
         pane.add(j, BorderLayout.CENTER);
 
         IPaginatorController pager = cart.getPaginatorController();
@@ -66,7 +71,7 @@ public class ViewCartUI extends BaseContent {
             viewCartItemUIList.get(i).setController(list.get(i));
 
         for(;i<sz;++i) {
-            var child = new ViewCartItemUI(list.get(i));
+            var child = new ViewCartItemUI(this, list.get(i));
             viewCartItemUIList.add(child);
             panelList.add(child);
         }
@@ -77,15 +82,14 @@ public class ViewCartUI extends BaseContent {
         panelList.invalidate();
     }
 
-    private void updateTotalLabel() {
+    void updateTotalLabel() {
         totalLabel.setText(
             "<html>" +
             countUnitStr(cart.getItemCount(), "item") + ", " +
             countUnitStr(cart.getItemTypeCount(), "item type") + "<br>" +
-            "Total without tax: " + cart.formatMoney(cart.getTotalMoney()) + " " + cart.getCurrency() + "<br>" +
-            "Last update: " + cart.formatDate(cart.getSavedDate()) +
+            "Total without tax: " + cart.getTotalMoney() + " " + config.getCurrency() + "<br>" +
+            "Last update: " + cart.getSavedDate() +
             "</html>");
-
     }
 
     private JButton payOrderButton() {

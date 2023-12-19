@@ -17,6 +17,11 @@ public class TopLevelFrame extends JFrame {
     @Getter
     private final ContentNavigator contentNavigator = new ContentNavigator(screen);
     private final JFrame jFrame;
+    @Getter
+    private final MessageDisplayerImpl messageDisplayer = new MessageDisplayerImpl(this);
+    public TopLevelFrame() throws IOException {
+        this(ClassLoader.getSystemClassLoader().getResourceAsStream("defaultConfig.properties"));
+    }
     public TopLevelFrame(InputStream configStream) throws IOException {
         jFrame = new JFrame();
         FrameConfig frameConfig = new FrameConfig(configStream);

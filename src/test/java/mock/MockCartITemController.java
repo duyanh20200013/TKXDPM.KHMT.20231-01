@@ -7,21 +7,7 @@ import java.io.IOException;
 import java.util.Date;
 
 public class MockCartITemController implements ICartItemController {
-    @Override
-    public String getCurrency() {
-        return "VND";
-    }
     int count;
-
-    @Override
-    public String formatMoney(long amount) {
-        return Long.toString(amount);
-    }
-
-    @Override
-    public String formatDate(Date date) {
-        return "";
-    }
 
     @Override
     public void remove() {
@@ -33,13 +19,13 @@ public class MockCartITemController implements ICartItemController {
     }
 
     @Override
-    public long getTotalPrice() {
-        return 0;
+    public String getTotalPrice() {
+        return "";
     }
 
     @Override
-    public long getItemPrice() {
-        return 0;
+    public String getItemPrice() {
+        return "";
     }
 
     @Override

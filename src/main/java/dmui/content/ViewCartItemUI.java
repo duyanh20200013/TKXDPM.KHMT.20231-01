@@ -2,8 +2,6 @@ package dmui.content;
 
 import controller.ICartItemController;
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -22,9 +20,11 @@ public class ViewCartItemUI extends BasePanel {
     private final JButton minus = new JButton("-");
     private final JButton remove = new JButton("Remove");
     private final JTextField count = new JTextField();
+    private final ViewCartUI viewCartUI;
 
-    public ViewCartItemUI(ICartItemController controller) {
+    ViewCartItemUI(ViewCartUI viewCartUI, ICartItemController controller) {
         super(new BorderLayout());
+        this.viewCartUI = viewCartUI;
         setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
         JPanel imagePanel = new BasePanel();
@@ -37,6 +37,7 @@ public class ViewCartItemUI extends BasePanel {
         contentPanel.add(title);
         contentPanel.add(type);
         contentPanel.add(priceCalculate);
+        contentPanel.add(outOfProduct);
         add(contentPanel, BorderLayout.CENTER);
         count.setColumns(5);
         
@@ -112,7 +113,7 @@ public class ViewCartItemUI extends BasePanel {
         icon.setImage(image);
         title.setText(cartItemController.getTitle());
         type.setText(cartItemController.getType());
-        priceCalculate.setText("%s * %s = %s".formatted(cartItemController.getCount(), cartItemController.formatMoney(cartItemController.getItemPrice()), cartItemController.formatMoney(cartItemController.getTotalPrice())));
+        priceCalculate.setText("%s * %s = %s".formatted(cartItemController.getCount(), cartItemController.getItemPrice(), cartItemController.getTotalPrice()));
         int cnt = cartItemController.getCount();
         count.setText(""+cnt);
         minus.setEnabled(cnt != 0);
@@ -125,5 +126,6 @@ public class ViewCartItemUI extends BasePanel {
             add.setEnabled(false);
             outOfProduct.setVisible(true);
         }
+        this.viewCartUI.updateTotalLabel();
     }
 }

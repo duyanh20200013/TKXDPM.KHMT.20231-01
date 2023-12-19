@@ -3,14 +3,14 @@ package controller;
 import java.awt.*;
 import java.io.IOException;
 
-public interface ICartItemController extends IBaseController {
+public interface ICartItemController {
     void remove();
 
     boolean checkRemain();
 
-    long getTotalPrice();
+    String getTotalPrice();
 
-    long getItemPrice();
+    String getItemPrice();
 
     void plus();
 

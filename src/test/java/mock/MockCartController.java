@@ -10,23 +10,8 @@ import java.util.List;
 
 public class MockCartController implements ICartController {
     @Override
-    public String getCurrency() {
-        return "VND";
-    }
-
-    @Override
-    public String formatMoney(long amount) {
-        return amount + "";
-    }
-
-    @Override
-    public String formatDate(Date date) {
+    public String getTotalMoney() {
         return "";
-    }
-
-    @Override
-    public long getTotalMoney() {
-        return 0;
     }
 
     @Override
@@ -40,8 +25,8 @@ public class MockCartController implements ICartController {
     }
 
     @Override
-    public Date getSavedDate() {
-        return new Date();
+    public String getSavedDate() {
+        return "";
     }
 
     @Override

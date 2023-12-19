@@ -1,71 +1,73 @@
 package controller.impl;
 
 import controller.ICartItemController;
-import dmui.content.BasePanel;
-import domain.CartItemDomain;
+import domain.ICartItemDomain;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
 
 public class CartItemController extends BaseController implements ICartItemController {
-    private final CartItemDomain cartItemDomain;
+    private final ICartItemDomain cartItem;
     private final CartController parrent;
-    CartItemController(CartItemDomain cartItemDomain, CartController parrent) {
-        this.cartItemDomain = cartItemDomain;
+    CartItemController(ICartItemDomain ICartItemDomain, CartController parrent) {
+        super();
+        this.cartItem = ICartItemDomain;
         this.parrent = parrent;
     }
     @Override
     public void remove() {
+        parrent.cart.removeItem(cartItem.getItemId());
+        parrent.paginator.invokeAllCallback();
     }
 
     @Override
     public boolean checkRemain() {
-        return cartItemDomain.hasEnough();
+        return cartItem.hasEnough();
     }
 
     @Override
-    public long getTotalPrice() {
-        return cartItemDomain.getPrice();
+    public String getTotalPrice() {
+        return formatMoney(cartItem.getPrice());
     }
 
     @Override
-    public long getItemPrice() {
-        return cartItemDomain.getEachItemPrice();
+    public String getItemPrice() {
+        return formatMoney(cartItem.getEachItemPrice());
     }
 
     @Override
     public void plus() {
-        cartItemDomain.inc();
+        cartItem.setCount(cartItem.getCount()+1);
     }
 
     @Override
     public void minus() {
-        cartItemDomain.dec();
+        cartItem.setCount(cartItem.getCount()-1);
     }
 
     @Override
     public void setItemCount(int count) {
-        cartItemDomain.setCount(count);
+        cartItem.setCount(count);
     }
 
     @Override
     public String getTitle() {
-        return cartItemDomain.getTitle();
+        return cartItem.getTitle();
     }
 
     @Override
     public String getType() {
-        return cartItemDomain.getType();
+        return cartItem.getType();
     }
 
     @Override
     public int getCount() {
-        return cartItemDomain.getCount();
+        return cartItem.getCount();
     }
 
     @Override
     public Image getImage() throws IOException {
-        return ImageIO.read(cartItemDomain.getImageData());
+        return ImageIO.read(cartItem.getImageData());
     }
 }
