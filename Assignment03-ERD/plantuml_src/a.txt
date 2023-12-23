@@ -1,0 +1,71 @@
+@startuml
+entity ItemEntity {
+	title: text
+	type: text
+	weight: number
+	price: number
+	remain: number
+	lastPriceChange: date
+	image: byte[]
+	deleted: bool
+}
+
+entity CartItemEntity {
+	count: number
+}
+
+entity ShipInfoEntity {
+	fullname: text
+	phone: text
+	address: text
+	instruction: text
+
+	rush_address: text
+	rush_instruction: text
+}
+
+entity InvoiceItemEntity {
+  	title: text
+	type: text
+	weight: number
+	price: number
+	remain: number
+	lastPriceChange: date
+	image: byte[]
+}
+
+entity ProvinceEntity {
+	name : text
+}
+
+entity ShipPolicy {
+	free_ammount : number
+	start_price : number
+	start_weight : number
+	expand_price : number
+	rush_charge : number
+}
+
+entity PaymentResult {
+	transactionId : number
+	date : date
+	ammount : number
+	note : text
+	status : number
+	desc : text
+}
+
+ProvinceEntity }|--|| ShipPolicy: using_policy
+CartEntity ||--|{ CartItemEntity: has
+CartItemEntity |o--|| ItemEntity: link_to
+InvoiceEntity ||--|| ShipInfoEntity: ship instruction
+InvoiceEntity ||--|{ InvoiceItemEntity: normal_ship
+InvoiceEntity ||--|{ InvoiceItemEntity: rush_ship
+InvoiceEntity |o-|| PaymentResult: payed
+
+ProvinceEntity }|--|{ ItemEntity: rushable_at
+
+ShipInfoEntity }|-o| ProvinceEntity: province
+ShipInfoEntity }|-o| ProvinceEntity: rush_province
+
+@enduml
